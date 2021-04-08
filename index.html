@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MV fitness</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- <script src="index.js"> </script> -->
+</head>
+
+
+<body>
+  <header class="header">
+    <div class="left">
+      <img src="download.png" alt="logo image">
+      <div>MV Fitness</div>
+    </div>
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Fitness Calculator</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <button class="btn">Call Us</button>
+      <button class="btn">Email us</button>
+    </div>
+  </header>
+  <div class="container">
+    <h1>JOIN THE BEST GYM OF NASHIK</h1>
+    <form name="myform" action="">
+      <div class="formgroup">
+        <input id="fname" type="text" name="name" placeholder="Enter your name">
+        
+      </div>
+      <div class="formgroup">
+        <input id="fnumber" type="text" name="" placeholder="Enter your age">
+        <span id="nerror"> </span>
+      </div>
+      <div class="formgroup">
+        <!-- <input id="fgender" type="text" name="" placeholder="Enter your gender"> -->
+        <select>
+          <option>MALE</option>
+          <option>FEMALE</option>
+        </select>
+      </div>
+      <div class="formgroup">
+        <input id="flocality" type="text" name="" placeholder="Enter your locality">
+      </div>
+      <div class="formgroup">
+        <input id="fmobile" type="number" name="" placeholder="Enter your mobile number">
+      </div>
+      <div class="formgroup">
+        <input id="femail" type="text" name="" placeholder="Enter your email">
+      </div>
+      <button onclick="validation()" class="btn">Submit</button>
+    </form>
+
+    </form>
+  </div>
+
+
+  <script>
+    function validation() {
+      var x = document.getElementById("fname").value;
+       var z = document.getElementById("fnumber").value;
+       //var g = document.getElementById("fgender").value;
+       var l = document.getElementById("flocality").value;
+       var e = document.getElementById("femail").value;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (x == "") {
+        alert("name should not blank");
+        return false;
+      }
+      if (z == ""){
+        alert("enter the age");
+        return false;
+      }
+      else if  (!z.match(/^\d+/)){
+       // document.getElementById("fnumber").innerHTML="enter only number  "
+        alert(" enter only number")
+        return false;
+      }
+      if (l == ""){
+        alert("enter the locality");
+        return false;
+      }
+      if ((!filter.test(e.value))){
+        alert("plese provide  valid email address ")
+        e.focus;
+        return false;
+
+      }
+    }</script>
+</body>
+
+</html>
